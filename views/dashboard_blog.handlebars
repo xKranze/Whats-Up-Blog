@@ -1,0 +1,23 @@
+<section class="card">
+  <form style="margin-bottom: 60px;" action="/dashboard/{{blog.id}}" method="POST">
+    <header>
+      <h5 class="row" style="padding-left:20px;"><input style="width:95%; margin-left: 10px;" type="text" name="title"
+          id="title" required value="{{blog.title}}"></h5>
+    </header>
+    <p class="content"><input style="width:95%; height:70px; margin-left: 10px;" type="text" name="content" id="content"
+        required value="{{blog.content}}"></p>
+    <p class="by">Posted by {{blog.creator_id}} on {{format_date blog.created_date}}</p>
+    <button style="margin-top:30px; float:right;" type="submit">Save</button>
+  </form>
+</section>
+<form action="/dashboard/delete/{{blog.id}}" method="POST">
+  <button style="margin-top:-70px; float:right;" type="submit">Delete</button>
+</form>
+
+
+
+<section>
+  {{#each blog.comments as |comment|}}
+  {{> comment-details}}
+  {{/each}}
+</section>

@@ -6,6 +6,9 @@
   <p>
   <p class="by">Posted by {{blog.creator_id}} on {{format_date blog.created_date}}</p>
 </section>
+
+
+
 <section>
   {{#each blog.comments as |comment|}}
   {{> comment-details}}

@@ -1,3 +1,11 @@
+<form style="margin-bottom: 50px;" action="/dashboard" method="POST">
+    <label>Title:</label>
+    <input style="width:100%;" type="text" name="title" id="title" required>
+    <br>
+    <label>Content:</label>
+    <input style="width:100%; height:70px;" type="text" name="content" id="content" required>
+    <button style="margin:15px; float:right;" type="submit">Post New Blog</button>
+</form>
 {{#each blogs as |blog|}}
 {{> dashboard-details}}
 {{/each}}
