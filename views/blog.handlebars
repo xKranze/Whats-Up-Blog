@@ -1,0 +1,13 @@
+<section class="card">
+  <header>
+    <h5 class="row" style="padding-left:20px;">{{blog.title}}</h5>
+  </header>
+  <p class="content">{{blog.content}}
+  <p>
+  <p class="by">Posted by {{blog.creator_id}} on {{format_date blog.created_date}}</p>
+</section>
+<section>
+  {{#each blog.comments as |comment|}}
+  {{> comment-details}}
+  {{/each}}
+</section>
