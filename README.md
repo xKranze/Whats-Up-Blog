@@ -1,77 +1,67 @@
-# Whats-Up-Blog
+# Whats Up Blog?
 
-User Story
+## Description 
+  
+In this Tech Blogging Web Application, after a user creates an account you will be able to Blog as you please and share these Blogs with other users.  Users will be able to Post, Edit, Update and Delete their post when logged in! Other users will be able to see the posts and comment on your Blogs with thier own thoughts.
 
-AS A developer who writes about tech
+## Table of Contents 
+  
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+  
+## Installation
 
-I WANT a CMS-style blog site
+Some installation packages is needed to run this application in command-line.
 
-SO THAT I can publish articles, blog posts, and my thoughts and opinions
+Please be sure to have the following installed prior to running this application:
 
-Acceptance Criteria
+-Install node version v16.18.0 by following instructions here:
 
-GIVEN a CMS-style blog site
+https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
-WHEN I visit the site for the first time
+-Install the required npm packages and run the server by typing the following below:
 
-THEN I am presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
+- npm i
 
-WHEN I click on the homepage option
+- login too your:
+mysql by mysql -u root -p
 
-THEN I am taken to the homepage
+- source db/schema.sql;
 
-WHEN I click on any other links in the navigation
+- use blog_db
 
-THEN I am prompted to either sign up or sign in
+- Quit sql
 
-WHEN I choose to sign up
+- npm run seed
 
-THEN I am prompted to create a username and password
+- node server.js
 
-WHEN I click on the sign-up button
 
-THEN my user credentials are saved and I am logged into the site
+## Usage
 
-WHEN I revisit the site at a later time and choose to sign in
+Please sign up for an account to get started.
 
-THEN I am prompted to enter my username and password
+After ensuring your logged in Blog away!
 
-WHEN I am signed in to the site
+    
+![alt text](./lib/logogen.jpg)
+![alt text](./lib/passedtest.jpg)
 
-THEN I see navigation links for the homepage, the dashboard, and the option to log out
 
-WHEN I click on the homepage option in the navigation
+## Credits
+Node.js - https://nodejs.org/en/
 
-THEN I am taken to the homepage and presented with existing blog posts that include the post title and the date created
+EXPRESS - https://expressjs.com/en/starter/installing.html
 
-WHEN I click on an existing blog post
+SVG Documentation - https://developer.mozilla.org/en-US/docs/Web/SVG
 
-THEN I am presented with the post title, contents, post creator’s username, and date created for that post and have the option to leave a comment
+Jest - https://jestjs.io/docs/getting-started
 
-WHEN I enter a comment and click on the submit button while signed in
+Inquirer - https://www.npmjs.com/package/inquirer
 
-THEN the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
+https://stackoverflow.com/
 
-WHEN I click on the dashboard option in the navigation
+UW BOOTCAMP COURSE
 
-THEN I am taken to the dashboard and presented with any blog posts I have already created and the option to add a new blog post
-
-WHEN I click on the button to add a new blog post
-
-THEN I am prompted to enter both a title and contents for my blog post
-
-WHEN I click on the button to create a new blog post
-
-THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-
-WHEN I click on one of my existing posts in the dashboard
-
-THEN I am able to delete or update my post and taken back to an updated dashboard
-
-WHEN I click on the logout option in the navigation
-
-THEN I am signed out of the site
-
-WHEN I am idle on the site for more than a set time
-
-THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
+Tutoring
