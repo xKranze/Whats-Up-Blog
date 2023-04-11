@@ -45,8 +45,7 @@ Please sign up for an account to get started.
 After ensuring your logged in Blog away!
 
     
-![alt text](./lib/logogen.jpg)
-![alt text](./lib/passedtest.jpg)
+![alt text](./public/MVC%20snippet.jpg)
 
 
 ## Credits
@@ -54,13 +53,7 @@ Node.js - https://nodejs.org/en/
 
 EXPRESS - https://expressjs.com/en/starter/installing.html
 
-SVG Documentation - https://developer.mozilla.org/en-US/docs/Web/SVG
-
-Jest - https://jestjs.io/docs/getting-started
-
-Inquirer - https://www.npmjs.com/package/inquirer
-
-https://stackoverflow.com/
+StackOverflow- https://stackoverflow.com/
 
 UW BOOTCAMP COURSE
 

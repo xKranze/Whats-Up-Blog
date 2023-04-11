@@ -175,7 +175,8 @@ router.post('/dashboard', async (req, res) => {
     const dbBlogData = await Blog.findAll({
       where: {
         creator_id: req.session.username
-      }
+      },
+      order: [['created_date', 'DESC']]
     });
 
     const blogs = dbBlogData.map((blog) =>
