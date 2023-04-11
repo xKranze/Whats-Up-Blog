@@ -14,7 +14,13 @@
   <button style="margin-top:-70px; float:right;" type="submit">Delete</button>
 </form>
 
-
+<form style="margin-bottom: 50px;" action="/dashboard/comment/{{blog.id}}" method="POST">
+    <label style="margin-left:5%;">Comment:</label>
+    <br>
+    <input style="width:90%; height:70px; margin-left:5%; margin-right:5%;" type="text" name="content" id="content" required>
+    <br>
+    <button style="margin-bottom:20px; margin-top:10px; float:right; margin-right:5%;" type="submit">Submit Comment</button>
+</form>
 
 <section>
   {{#each blog.comments as |comment|}}

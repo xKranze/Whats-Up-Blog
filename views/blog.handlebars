@@ -7,7 +7,13 @@
   <p class="by">Posted by {{blog.creator_id}} on {{format_date blog.created_date}}</p>
 </section>
 
-
+<form style="margin-bottom: 50px;" action="/blog/comment/{{blog.id}}" method="POST">
+    <label style="margin-left:5%;">Comment:</label>
+    <br>
+    <input style="width:90%; height:70px; margin-left:5%; margin-right:5%;" type="text" name="content" id="content" required>
+    <br>
+    <button style="margin-bottom:20px; margin-top:10px; float:right; margin-right:5%;" type="submit">Submit Comment</button>
+</form>
 
 <section>
   {{#each blog.comments as |comment|}}

@@ -1,6 +1,14 @@
 <section class="card">
   <div>
+    <form style="margin-bottom: 50px;" action="/blog/comment_edit/{{comment.id}}" method="POST" hidden>
+      <input style="width:90%; height:70px; margin-left:5%; margin-right:5%; margin-top:10px;" type="text" name="content" id="content"
+        required value="{{content}}">
+      <br>
+      <button style="margin-bottom:20px; margin-top:10px; float:right; margin-right:5%;" type="submit">Submit
+        Comment</button>
+    </form>
     <p class="content">{{content}}</p>
+
     <p class="by">Posted by {{creator_id}} on {{format_date created_date}}</p>
   </div>
 </section>

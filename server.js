@@ -4,6 +4,10 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const handlebars = require('handlebars');
+const helpers2 = require('handlebars-helpers')();
+handlebars.registerHelper(helpers2);
+
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');

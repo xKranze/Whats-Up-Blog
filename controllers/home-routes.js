@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
+      username: req.session.username 
     });
   } catch (err) {
     console.log(err);
@@ -40,7 +41,53 @@ router.get('/blog/:id', withAuth, async (req, res) => {
       ],
     });
     const blog = dbBlogData.get({ plain: true });
-    res.render('blog', { blog, loggedIn: req.session.loggedIn });
+    res.render('blog', { blog, loggedIn: req.session.loggedIn, username: req.session.username  });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one blog
+// Use the custom middleware before allowing the user to access the blog
+// Comment just added, blog is redrawn with the new comments.
+router.post('/blog/comment/:id', withAuth, async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.render('login');
+    return;
+  }
+
+  try {
+    const newComment = await Comment.create({
+      blog_id: req.params.id,
+      content: req.body.content,
+      creator_id: req.session.username,
+      created_date: new Date()
+    })
+
+    if (!newComment) {
+      res.status(400).send("Could not create new comment.");
+      return;
+    }
+
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'creator_id',
+            'created_date',
+            'content',
+          ],
+        },
+      ],
+    });
+    const blog = dbBlogData.get({ plain: true });
+    for(var i = 0; i < blog.comments.length; i++){
+      blog.comments[i].username = req.session.username
+    }
+    res.render('blog', { blog, loggedIn: req.session.loggedIn, username: req.session.username });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -221,6 +268,52 @@ router.post('/dashboard/delete/:id', async (req, res) => {
       loggedIn: req.session.loggedIn,
       username: req.session.username
     });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// GET one blog
+// Use the custom middleware before allowing the user to access the blog
+// Comment just added, blog is redrawn with the new comments.
+router.post('/dashboard/comment/:id', withAuth, async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.render('login');
+    return;
+  }
+
+  try {
+    const newComment = await Comment.create({
+      blog_id: req.params.id,
+      content: req.body.content,
+      creator_id: req.session.username,
+      created_date: new Date()
+    })
+
+    if (!newComment) {
+      res.status(400).send("Could not create new comment.");
+      return;
+    }
+
+    const dbBlogData = await Blog.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'creator_id',
+            'created_date',
+            'content',
+          ],
+        },
+      ],
+    });
+    const blog = dbBlogData.get({ plain: true });
+    for(var i = 0; i < blog.comments.length; i++){
+      blog.comments[i].username = req.session.username;
+    }
+    res.render('dashboard_blog', { blog, loggedIn: req.session.loggedIn, username: req.session.username });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
