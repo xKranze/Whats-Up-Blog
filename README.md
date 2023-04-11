@@ -39,6 +39,7 @@ mysql by mysql -u root -p
 
 
 ## Usage
+Please modify the .env by removing the example and add your password in.
 
 Please sign up for an account to get started.
 
