@@ -45,7 +45,10 @@ Please sign up for an account to get started.
 
 After ensuring your logged in Blog away!
 
-    
+Please see Heroku Deployed Page for Whats Up Blog here:
+
+<a href="https://aqueous-ravine-75596.herokuapp.com/">Whats Up Blog?</a>
+
 ![alt text](./public/MVC%20snippet.jpg)
 
 
